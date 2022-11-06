@@ -6,8 +6,8 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World mi nombre Ricardo Pabón Serna y soy nuevo XD');
+  res.setHeader('Content-Type', 'text/plain', "utf-8");
+  res.end('Hello World mi nombre Ricardo y soy nuevo XD');
 });
 
 server.listen(port, hostname, () => {
