@@ -1,0 +1,45 @@
+//Realiza una petición tipo GET:
+app.get('/', function (req, res) {
+  res.sendFile('./src/public/index.html', {
+    root: __dirname //Raíz donde va a empezar a buscar.
+  })
+})
+
+app.get('/prueba', (req, res) => {
+  res.sendFile('./Cat_November_2010-1a.jpg.webp',{
+    root: __dirname
+  })
+})
+
+app.post('/prueba', (req, res) => {
+  res.send('Actualizando producto.')
+})
+
+app.delete('/prueba', (req, res) => {
+  res.send('Eliminando.')
+})
+
+app.patch('/prueba', (req, res) => {
+  res.send('Actualizando parte del elemento')
+})
+
+app.get('/user', (req, res) => {
+  res.json({
+    name:"Ricardo",
+    lastanme: "pabon",
+    age: 40,
+    points: [1, 2, 3],
+    adress: {
+      city: "New york",
+      street: "some street 123"
+    }
+  })
+})
+
+app.get('/isAlive', (req, res) => {
+  res.sendStatus(204)
+})
+
+app.use(function (req, res) {
+  res.status(404).send('Tu pagina no ha sido encontrado. Sorry')
+})
