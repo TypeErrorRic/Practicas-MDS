@@ -1,28 +1,18 @@
-const { Router } = require("express");
+const { Router }  = require('express');
 
 const router = Router();
 
-router.get('/user', (req,res) => {
-    res.sendFile("./public/index.html", {
-         root: require.main.path 
-    })
+router.get('/dashboard', (req, res) => {
+  res.render('dashboard'); 
+});
+
+router.get('about', (req, res) => {
+  res.render('index', {title: "Mi primera pagina con Ejs."});
 })
-router.get('/user/:username', function (req, res) {
-    res.send(`Hello ${req.params.username.toUpperCase()}`)
-});
 
-router.get('/user/:username/photo', (req, res) => {
-    if (req.params.username === "ricardo") {
-        return res.sendFile("./uploads/Cat_November_2010-1a.jpg.webp", {
-            root: require.main.path
-        });
-    }
-    res.send(`Usuario: ${req.params.username.toUpperCase()} no tiene acceso.`)
-});
-
-router.post('/user', (req, res) => {
-    console.log(req.body)
-    res.send('Hello World.')
-});
+router.get('/', (req, res) => {
+  const is_active = true;
+  res.render('home', {is_active: is_active})
+})
 
 module.exports = router;

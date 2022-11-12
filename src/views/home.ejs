@@ -1,0 +1,12 @@
+<%- include('partials/header'); %>
+    <h1>Home</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit numquam mollitia repudiandae nostrum cumque
+    reiciendis officiis doloribus natus ipsa. Placeat, nam! Suscipit qui quaerat officia non repellat quisquam obcaecati
+    provident?</p>
+    <% if(is_active) { %>
+        <p>El servidor está activo</p>
+    <%} else {%>
+        <p>El servidor está inactivo</p>
+    <%}%>
+    <%= new Date() %>
+<%- include('partials/footer'); %>
