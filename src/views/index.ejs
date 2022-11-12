@@ -2,4 +2,9 @@
     <h1>
         <%= title %>
     </h1>
+    <ul>
+        <% for(let i=0; i < users.length; i++) { %>
+            <li> <%= users[i].name %> <%= users[i].lastname %> </li>
+        <% } %>
+    </ul>
 <%- include('partials/footer'); %>
