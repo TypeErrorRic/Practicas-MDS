@@ -19,7 +19,7 @@ router.get('/about', (req, res) => {
       id: 1,
     },
     {
-      name: "Juan",
+      name: "Meriyein",
       lastname: "García",
       id: 2,
     }
